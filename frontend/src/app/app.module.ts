@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button'
 import { AdduserComponent } from './adduser/adduser.component';
 import { EdituserComponent } from './edituser/edituser.component';
+import { HttpService } from './http.service';
 
 
 
@@ -44,7 +45,7 @@ import { EdituserComponent } from './edituser/edituser.component';
     MatFormFieldModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
