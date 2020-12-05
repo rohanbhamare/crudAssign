@@ -29,6 +29,7 @@ export class EdituserComponent implements OnInit {
 
   initializeForm() {
     this.formGroup = this.formBuilder.group({
+    id: ['', [Validators.required]],
     name: ['', [Validators.required]],
     email: ['', [Validators.required]],
     phone: ['', [Validators.required]],
@@ -39,6 +40,7 @@ export class EdituserComponent implements OnInit {
     this.httpService.getUser(this.userId).subscribe((data)=>{
       this.user = data as User
       this.formGroup.patchValue({
+        id:this.user.id,
         name:this.user.name,
         phone:this.user.phone,
         email:this.user.email

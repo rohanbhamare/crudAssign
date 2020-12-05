@@ -2,7 +2,12 @@
     <h3 mat-dialog-title>Edit Contact</h3>
   
     <form [formGroup]="formGroup" class="mat-dialog-content" (ngSubmit)="onSubmit()" #formControl="ngForm">
-  
+        <div class="form" [hidden]=true>
+            <mat-form-field color="accent">
+              <input matInput #input class="form-control" formControlName="id" placeholder="Id"  name="id" required >
+            </mat-form-field>
+          </div>
+
       <div class="form">
         <mat-form-field color="accent">
           <input matInput #input class="form-control" formControlName="name" placeholder="Name"  name="name" required >

@@ -12,7 +12,7 @@ import { from } from 'rxjs';
 })
 export class UsersComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'phone', 'email', 'action'];
+  displayedColumns: string[] = ['id','name', 'phone', 'email', 'action'];
   columnsToDisplay: string[] = this.displayedColumns.slice();
 
   dataSource: User[];
@@ -32,7 +32,8 @@ export class UsersComponent implements OnInit {
 
   deleteUser(id){
     return this.httpService.deleteUser(id).subscribe(()=>{
-      console.log(">>>>>>>>>>. user deleted...")
+      console.log(">>>>>>>>>>. user deleted...");
+      this.getUsersList();
     })
   }
 
